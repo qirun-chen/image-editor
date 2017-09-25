@@ -3,7 +3,7 @@ from Tkinter import *
 import tkFileDialog
 import tkMessageBox
 from FileProcessor import FileProcessor
-
+from ImageProcessor import ImageProcessor
 
 class UserInterface:
 
@@ -99,6 +99,13 @@ class UserInterface:
 
         for k, v in name_id_dict.iteritems():
             print k, 'maps to', v
+
+        image_handler = ImageProcessor(self.text_output_path.get())
+        self.text_status_prompt.set(u"正在处理......")
+
+        message = image_handler.add_name_and_id_on_img(name_id_dict)
+        self.text_status_prompt.set(u'')
+        tkMessageBox.showerror(u"Well done", message)
 
 
 if __name__ == "__main__":
