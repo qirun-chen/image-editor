@@ -108,7 +108,5 @@ class UserInterface:
         tkMessageBox.showerror(u"Well done", message)
 
 
-if __name__ == "__main__":
-    d = UserInterface()
-    mainloop()
+
 
